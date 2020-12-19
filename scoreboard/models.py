@@ -22,6 +22,7 @@ class Team(models.Model):
         return self.team_name
 
 class Player(models.Model):
+    team_name=models.ForeignKey(Team,on_delete=models.CASCADE)
     player_name=models.TextField(max_length=10,blank=False,null=False)
 
     def __str__(self):
@@ -29,12 +30,12 @@ class Player(models.Model):
 
 class Score(models.Model):
     SCORE_GRADES = (
-                   ('5', 'A'),
-                   ('4', 'B'),
-                   ('3', 'C'),
-                   ('2', 'D'),
-                   ('1', 'E'),
-                   ('0', 'F'),
+                   (5, 'A'),
+                   (4, 'B'),
+                   (3, 'C'),
+                   (2, 'D'),
+                   (1, 'E'),
+                   (0, 'F'),
     )
     round_no = models.ForeignKey(Round, on_delete=models.CASCADE)
     team_name = models.ForeignKey(Team, on_delete=models.CASCADE)

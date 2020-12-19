@@ -12,13 +12,16 @@
 
 	    <a  href="/">Score Board</a>
         <a class="active" href= "/addteam/" >Add Team </a>
+        <a href= "/addplayer/" >Add Player</a>
 	    <a href= "/addscore/" >Add Score</a>
+        <a href= "/signup/" >Signup</a>
+	    <a href= "/login/" >Login</a>        <a href= "/logout/" >Logout</a>
 
 </div><center>
 
 
 
-
+<center>
 <div class="grid-container2">
 
       <div class="grid-item">
@@ -35,12 +38,14 @@
 <table>
     <thead>
     <tr>
+        <th>Sr No.</th>
         <th>Team Name</th>
     </tr>
     </thead>
     <tbody>
                         {% for t in tdata %}
     <tr>
+        <td>{{forloop.counter}}</td>
         <td>{{t.team_name}}</td>
     </tr>
     {% endfor %}
@@ -50,39 +55,9 @@
     </tbody>
 
 </table></div>
-      <div class="grid-item">
-          <div>
-    <h1><center>Add Your Players Here</center></h1>
-        <center><form action="/addplayer/" method="POST">
-            {% csrf_token %}
-            <label for="player_name" style="color:white">Player Name:</label><br><br>
-            <input type="text" id="player_name" name="player_name"><br><br>
-            <button type="submit" style="background:green;color:white">SAVE</button>
-        </form></center>
-      <h3>Registered Players</h3>
-<table>
-    <thead>
-    <tr>
-        <th>Player Name</th>
-
-    </tr>
-    </thead>
-    <tbody>
-                        {% for p in pdata %}
-    <tr>
-        <td>{{p.player_name}}</td>
-    </tr>
-    {% endfor %}
 
 
-
-    </tbody>
-
-</table></div>
-</div>
-
-
-</div>
+</div></center>
 
 </body>
 </html>

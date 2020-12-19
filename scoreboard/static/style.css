@@ -44,11 +44,12 @@ table, th, td {
 }
 .grid-container2 {
   display: grid;
-  grid-template-columns: auto auto   ;
+  grid-template-columns: auto  ;
   justify-content:space-evenly;
 }
 
 h1{
 color:white;
 }
+
 
