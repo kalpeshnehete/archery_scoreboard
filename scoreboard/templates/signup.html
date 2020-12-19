@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<div class="topnav">
+
+	    <a href="/">Score Board</a>
+        <a href= "/addteam/" >Add Team </a>
+        <a href= "/addplayer/" >Add Player</a>
+	    <a href= "/addscore/" >Add Score</a>
+        <a class="active" href= "/signup/" >Signup</a>
+	    <a href= "/login/" >Login</a>
+
+
+
+</div>
+
+<center><h4 style="color:white">Signup Here</h4>
+
+     <form action="/signup/" method="POST" style="color:white">
+		    {% csrf_token %}
+            User Name:<input type = "text" name="username"  ><br><br>
+			First Name:<input type = "text" name="first_name"><br><br>
+			Last Name:<input type = "text" name="last_name"><br><br>
+			Password:<input type = "password" name="password"><br><br>
+            <input type="submit">
+        </form>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<div class="topnav">
+	    <a href="/">Score Board</a>
+        <a href= "/addteam/" >Add Team </a>
+        <a href= "/addplayer/" >Add Player</a>
+	    <a href= "/addscore/" >Add Score</a>
+        <a href= "/signup/" >Signup</a>
+	    <a class="active" href= "/login/" >Login</a>
+
+
+</div>
+
+
+<center><h3 style="color:white">Please Login Here</h3>
+     <form action="/login/" method="POST" style="color:white">
+		    {% csrf_token %}
+            User Name:<input type = "text" name="username"><br><br>
+			Password:<input type = "password" name="password"><br><br>
+            <input type="submit">
+     </form>
+</center>
+
+</body>
+</html>
