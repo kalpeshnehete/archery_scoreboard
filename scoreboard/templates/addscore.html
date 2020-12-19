@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Add Score</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<center><div class="topnav">
+
+	    <a href="/">Score Board</a>
+        <a href= "/addteam/" >Add Team </a>
+	    <a class="active" href= "/addscore/" >Add Score</a>
+
+</div><center>
+<h1><center>Enter Scores Here</center></h1>
+
+
+
+        <form action="/addscore/" method="POST" style="color:white">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="background:green; color:white">SAVE</button>
+        </form>
+
+
+</body>
+</html>

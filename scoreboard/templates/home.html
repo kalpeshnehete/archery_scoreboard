@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Archery Scoreboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+<div class="topnav">
+
+	    <a class="active" href="#">Score Board</a>
+        <a href= "/addteam/" >Add Team </a>
+	    <a href= "/addscore/" >Add Score</a>
+
+</div>
+
+<h1><center>Archery Score Board</center></h1>
+
+<div class="grid-container">
+  <div class="grid-item">
+      <h3>Round 1</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Round 1 Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for s in r1score %}
+    <tr>
+        <td>{{s.team_name}}</td>
+        <td>{{s.player_name}}</td>
+        <td>{{s.playerscore}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+    <div class="grid-item">
+      <h3>Round 2</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Round 2 Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for s2 in r2score %}
+    <tr>
+        <td>{{s2.team_name}}</td>
+        <td>{{s2.player_name}}</td>
+        <td>{{s2.playerscore}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+  <div class="grid-item">
+      <h3>Round 3</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Round 1 Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for s3 in r3score %}
+    <tr>
+        <td>{{s3.team_name}}</td>
+        <td>{{s3.player_name}}</td>
+        <td>{{s3.playerscore}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+  <div class="grid-item">
+      <h3>Round 4</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Round 4 Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for s4 in r4score %}
+    <tr>
+        <td>{{s4.team_name}}</td>
+        <td>{{s4.player_name}}</td>
+        <td>{{s4.playerscore}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+  <div class="grid-item">
+      <h3>Round 5</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Round 5 Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for s5 in r5score %}
+    <tr>
+        <td>{{s5.team_name}}</td>
+        <td>{{s5.player_name}}</td>
+        <td>{{s5.playerscore}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+</div>
+
+
+
+</body>
+</html>

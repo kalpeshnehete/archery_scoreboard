@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Your Team</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+<center><div class="topnav">
+
+	    <a  href="/">Score Board</a>
+        <a class="active" href= "/addteam/" >Add Team </a>
+	    <a href= "/addscore/" >Add Score</a>
+
+</div><center>
+
+
+
+
+<div class="grid-container2">
+
+      <div class="grid-item">
+              <div>
+<h1><center>Register Your Team </center></h1>
+        <center><form action="/addteam/" method="POST">
+            {% csrf_token %}
+            <label for="team_name" style="color:white">Team Name:</label><br><br>
+            <input type="text" id="team_name" name="team_name" required><br><br>
+            <button type="submit" style="background:green;color:white">Register</button>
+        </form></center>
+</div>
+      <h3>Registered Teams</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Team Name</th>
+    </tr>
+    </thead>
+    <tbody>
+                        {% for t in tdata %}
+    <tr>
+        <td>{{t.team_name}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+      <div class="grid-item">
+          <div>
+    <h1><center>Add Your Players Here</center></h1>
+        <center><form action="/addplayer/" method="POST">
+            {% csrf_token %}
+            <label for="player_name" style="color:white">Player Name:</label><br><br>
+            <input type="text" id="player_name" name="player_name"><br><br>
+            <button type="submit" style="background:green;color:white">SAVE</button>
+        </form></center>
+      <h3>Registered Players</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Player Name</th>
+
+    </tr>
+    </thead>
+    <tbody>
+                        {% for p in pdata %}
+    <tr>
+        <td>{{p.player_name}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table></div>
+</div>
+
+
+</div>
+
+</body>
+</html>
